@@ -66,7 +66,7 @@ const InstagramEmbed = ({ url }) => {
 };
 
 // スタッフカードコンポーネントの作成
-const StaffCard = ({ image, name, position, message, instagramUrl }) => {
+const StaffCard = ({ image, name, position, message }) => {
   return (
     <div className="bg-[#f5f5f5] p-4 md:p-8 rounded-xl shadow-sm">
       <div className="bg-white/80 p-6 rounded-xl shadow-sm h-full flex flex-col">
@@ -82,7 +82,7 @@ const StaffCard = ({ image, name, position, message, instagramUrl }) => {
               alt={`スタッフ${name}`}
               width={128}
               height={128}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover object-top"
             />
           </div>
           <div>
@@ -96,26 +96,54 @@ const StaffCard = ({ image, name, position, message, instagramUrl }) => {
             {message}
           </p>
           
-          <p className="text-gray-700">
-            でも<span className="font-bold text-[#D3B58D]">michillでは</span>、
-            <span className="bg-[#D3B58D]/10 px-2 py-1 rounded inline-block mt-1">
-              スタッフが快く対応してくれ、お客様への連絡も代わりにしてくれます。
-            </span>
-          </p>
-          
-          <p className="text-gray-700">
-            お客様も子育て経験者が多く理解があるので、
-            <span className="border-b-2 border-[#D3B58D]">
-              ママでも安心して美容師を続けられています！
-            </span>
-          </p>
+          {name === "kaoru" ? (
+            <>
+              <p className="text-gray-700">
+                でも<span className="font-bold text-[#D3B58D]">Liliyでは</span>、
+                <span className="bg-[#D3B58D]/10 px-2 py-1 rounded inline-block mt-1">
+                  長年の経験を活かし、半年でカラーリストからメンズカットまでデビューできました。
+                  無理なく入客できる環境が心強いです。
+                </span>
+              </p>
+              
+              <p className="text-gray-700">
+                50歳を超えて身体的な不安もある中、
+                <span className="border-b-2 border-[#D3B58D]">
+                  休みの設定も柔軟で、子供との時間もしっかり確保できるため、仕事も子育ても充実しています！
+                </span>
+              </p>
+            </>
+          ) : (
+            <>
+              <p className="text-gray-700">
+                でも<span className="font-bold text-[#D3B58D]">Liliyに入社して</span>、
+                <span className="bg-[#D3B58D]/10 px-2 py-1 rounded inline-block mt-1">
+                  オーナーをはじめ、チーフなどスタッフ全員の協力のもと、無理なく一歩ずつスキルアップができています。
+                  前職では外部講習の費用負担もあり、パートとの両立が厳しく夫からも心配されていましたが...
+                </span>
+              </p>
+              
+              <p className="text-gray-700">
+                今では、
+                <span className="border-b-2 border-[#D3B58D]">
+                  予約状況に応じて早上がりも可能で、家事にもしっかり時間を使えるようになりました。
+                  仕事と家庭のバランスが取れ、心に余裕が生まれています。
+                </span>
+              </p>
+              
+              <p className="text-gray-700">
+                <span className="bg-[#D3B58D]/10 px-2 py-1 rounded inline-block mt-1">
+                  技術面でも着実に成長を実感でき、毎日が楽しく充実しています。
+                </span>
+              </p>
+            </>
+          )}
         </div>
-        
-        <InstagramEmbed url={instagramUrl} />
       </div>
     </div>
   );
 };
+
 
 // スライドショーコンポーネントを追加
 const ImageSlideshow = () => {
@@ -126,7 +154,7 @@ const ImageSlideshow = () => {
       alt: "外観の様子"
     },
     {
-      src: "/image/naikan.jpg",
+      src: "/image/tenai2.jpeg",
       alt: "店内の様子"
     }
   ];
@@ -275,39 +303,22 @@ function MainComponent() {
   const RequirementSection = () => {
     const requirements = [
       {
-        main: "仕事と家庭を両立したい方",
-        sub: "家庭が一番なので、仕事よりも家族を優先したい方"
+        main: "週1日からでもOK！土日はゆっくり休みたい方",
+        sub: "平日のみの勤務で、プライベートとの両立が可能です"
       },
       {
-        main: "無理なく生涯現役で美容師を続けたい方",
-        sub: "1日3名までの丁寧な施術で、疲弊することなく働きたい方"
+        main: "30代～60代の方が活躍中！",
+        sub: "豊富な経験を活かして、無理なく長く働きたい方"
       },
       {
-        main: "現場以外のキャリアも積んでいきたい方",
-        sub: "商品開発や企画広報などに挑戦したい方"
+        main: "違うお店で働いているけど夜も働きたい方",
+        sub: "17時以降の夜間勤務で副業として働きたい方"
       },
       {
-        main: "残業ゼロ・ゆとりある予約・数字を追わない仕事をしていきたい方",
-        sub: "心に余裕を持って働きたい方"
+        main: "あなたらしい接客ができる方",
+        sub: "「こうしなければならない」という固定観念に縛られず働きたい方"
       },
-      {
-        main: "社会貢献や地域のイベントなどを、楽しんでやってみたい方",
-        sub: "美容師以外のことにもやりがりを持っていきたい方",
-        images: [
-          {
-            src: "/image/ibento.png",
-            alt: "社会貢献活動の様子1",
-            caption: "子ども美容室の取り組み",
-            description: "地域の子どもたちが美容師のお仕事を体験でき、クリエイティブな体験の場を提供"
-          },
-          {
-            src: "/image/sien.png",
-            alt: "社会貢献活動の様子2",
-            caption: "つばめ学習塾への寄付活動",
-            description: "これにより、塾に通えない子どもたちへの学習支援ができた"
-          }
-        ]
-      }
+      
     ];
 
     const [ref, inView] = useInView({
@@ -433,7 +444,7 @@ function MainComponent() {
                 
                 <div className="relative">
                   <p className="text-2xl md:text-4xl lg:text-5xl font-medium opacity-0 blur-sm" id="blurText">
-                    <span className="inline-block">HAIR LIBERT'E  Liliy</span>
+                    <span className="inline-block">Liliy HAIR & SPA</span>
                   </p>
                   <style jsx>{`
                     #blurText {
@@ -468,7 +479,7 @@ function MainComponent() {
               応募する
             </Link>
             <button className="bg-[#06c755] text-white px-6 py-3 rounded-full hover:bg-[#059144] transition duration-300 text-sm sm:text-base sm:px-8 w-fit mx-auto sm:mx-0">
-              代表田中からのメッセージを見る
+              代表からのメッセージを見る
             </button>
       </div>
 
@@ -546,10 +557,9 @@ function MainComponent() {
         <div className="absolute inset-0 bg-white/50"></div>
         
         <div className="relative z-10">
-          <h3 className="text-xl md:text-3xl font-bold text-center mb-6">
-            <span className="text-[#D3B58D]">HAIR LIBERT'E  Liliyの特徴</span>
-            <br className="md:hidden" />
-          </h3>
+        <SectionHeader 
+          title="Liliy HAIR & SPAの特徴"
+        />
 
          
 <div className="mt-8 md:mt-12 px-4 max-w-6xl mx-auto">
@@ -648,7 +658,7 @@ function MainComponent() {
 
       <section className="py-16 md:py-24 bg-gradient-to-r from-[#D3B58D]/10 to-[#D3B58D]/5">
         <SectionHeader 
-          title="Liliyで働くことで得られる事"
+          title="Liliy HAIR & SPAで働くことで得られる事"
           subtitle="あなたらしい働き方"
         />
         <div className="max-w-6xl mx-auto px-4">
@@ -749,7 +759,7 @@ function MainComponent() {
             >
               <h3 className="text-2xl mb-6 font-bold text-center">
                 <span className="relative inline-block">
-                  1日のシフトスケジュール
+                  とある現場の1日のスケジュール
                   <span className="absolute -bottom-2 left-0 w-full h-1 bg-[#D3B58D]/30"></span>
                 </span>
               </h3>
@@ -835,17 +845,26 @@ function MainComponent() {
       </section>
 
       <section className="py-16 md:py-24">
+      <SectionHeader 
+          title="スタッフ紹介"
+          subtitle="働く仲間"
+        />
         
         <div className="max-w-5xl mx-auto px-4">
           <div className="space-y-8">
             <StaffCard 
-              image="/image/aoi.jpg"
-              name="あおい"
-              position="入社4年目 / スタイリスト"
-              message={`4歳の子供がいるため、急な休みを取ることも...`}
-              instagramUrl="https://www.instagram.com/reel/C_7jiphvJ4I/embed"
+              image="/image/kaoru.jpeg"
+              name="kaoru"
+              position="入社8ヶ月 / スタイリスト"
+              message={`年齢的にも新しい環境に飛び込むことへの不安もありました...`}
             />
-            {/* 必要に応じて追加のStaffCardを配置 */}
+            
+            <StaffCard 
+              image="/image/sutahhu.jpeg"
+              name="小池 あきえ"
+              position="入社7年 / サロンディレクターチーフ"
+              message={`前職では、技術を磨く時間もなく、家庭との両立に悩んでいました...`}
+            />
           </div>
         </div>
       </section>
@@ -1016,15 +1035,15 @@ function MainComponent() {
             {[
               {
                 question: "技術に不安があっても大丈夫ですか？",
-                answer: "研修期間中は、営業時間内の６割がトレーニングです。オリジナルのアプリがありますのでそれを見てご自身の空いている時間に勉強ができます。"
+                answer: "技術に不安は、大丈夫です。営業中練習を1日30分から1時間していただきます。"
               },
               {
                 question: "お客様の年齢層は？",
-                answer: "30〜60代の女性のみです。白髪染めやヘアケアに関心の高いお客様が中心です。"
+                answer: "20代から50代です。"
               },
               {
                 question: "採用までの流れはどんな感じですか？",
-                answer: "まずzoomでオンライン面談をします。その後、サロン見学＆メニューの体験をしてご希望があれば面接をします。"
+                answer: "採用は、履歴書と面接です"
               },
               
             ].map((qa, index) => (
@@ -1076,30 +1095,34 @@ function MainComponent() {
                   />
                 </div>
                 <h3 className="text-xl font-bold mb-1">オーナー</h3>
-                <p className="text-gray-600 mb-6 md:mb-0">tanaka</p>
+                <p className="text-gray-600 mb-6 md:mb-0"></p>
               </div>
               
               <div className="md:w-2/3">
                 <div className="prose prose-sm md:prose-lg max-w-none">
                   <p className="space-y-4 md:space-y-6">
                     <span className="block mb-4 md:mb-6 text-gray-800 text-base md:text-lg leading-relaxed">
-                      私たちの美容院では、働くスタイルの自由さを大切にしています。
+                      私たちの美容院では、一人ひとりのライフスタイルを尊重し、自由な働き方を大切にしています。
                     </span>
 
                     <span className="block mb-4 md:mb-6 text-gray-800 text-base md:text-lg leading-relaxed">
-                      営業時間は10時から17時を基本とし、お子さんの行事や大切な予定、さらには「推し活」にも柔軟に対応できる環境を整えています。ライフスタイルに合わせて、無理なく働けるのが私たちの特徴です。
+                      基本の営業時間は10時から17時。お子さんの行事や大切な予定、さらには「推し活」など、プライベートの時間も大切にできる柔軟な勤務環境を整えています。お子様の急な発熱や授業参観などにも対応可能なので、安心して働ける職場です。
                     </span>
 
                     <span className="block mb-4 md:mb-6 text-gray-800 text-base md:text-lg leading-relaxed">
-                      また、「もっと働きたい！」という方のために、夜は23時までの勤務も可能。あなたのライフスタイルに寄り添った働き方を、一緒に見つけていきましょう。
+                      また、「もっとしっかり働きたい！」という方のために、夜23時までの勤務も可能。現在、17時から23時の時間帯で働ける方を募集中です！ 生活スタイルに合わせて、無理なく続けられる働き方を一緒に見つけていきましょう。
                     </span>
 
                     <span className="block mb-4 md:mb-6 text-gray-800 text-base md:text-lg leading-relaxed">
-                      私たちのサロンは、<strong>美容師一人ひとりの「働きやすさ」と「やりがい」</strong>を大切にしています。ぜひ、あなたらしい働き方をここで叶えてください。
+                      さらに、当サロンではスタッフ同士の直接技術指導が人気で、学びながらスキルアップできる環境が整っています。技術向上だけでなく、コミュニケーションの機会も多く、働きやすい雰囲気が魅力です。
+                    </span>
+
+                    <span className="block mb-4 md:mb-6 text-gray-800 text-base md:text-lg leading-relaxed">
+                      私たちは、美容師一人ひとりが<strong>「働きやすさ」と「やりがい」</strong>を感じられる職場を目指しています。自分らしい働き方を、ぜひここで実現してください。
                     </span>
 
                     <span className="block text-gray-800 text-base md:text-lg leading-relaxed">
-                      皆さまのご応募を、心よりお待ちしております！
+                      皆さまのご応募を心よりお待ちしております！
                     </span>
                   </p>
                 </div>
