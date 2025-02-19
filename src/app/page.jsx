@@ -269,10 +269,10 @@ function MainComponent() {
 
   // 悩みセクションの各項目用のIntersectionObserver
   const concerns = [
-    "与えられる仕事は白髪染めとシャンプーばかり。会話も得意ではないし、淡々とこなせばいいと思っていたけれど…。",
-    "本当はもっと色々な技術を学びたいし、美容の仕事が好き。でも、先輩たちに相談する余裕もなく、ひたすら与えられた作業をこなす毎日。",
-    "「こんなことを続けていて、本当に成長できるのかな…？」と不安になる。",
-    "気づけば日々の疲れに追われ、時間だけが過ぎていく。\nそして結局、時給が上がらない…。💧",
+    "「お客様との会話も型にはめられて…」\n一つ一つの行動をオーナーに確認しないといけない状況で、自分の個性を出せずストレスが溜まっていく。",
+      "「子供の行事で早退したい」\n「体調が悪くて休みたい」\nそんな当たり前の願いも、言い出せない雰囲気。家庭との両立に悩む日々…。",
+      "カラーやネイル、ヘッドスパなど得意な技術があっても、年齢を理由に新しいことへの挑戦を制限され、給料も上がらない現実。",
+      "「このまま続けていても、将来は大丈夫かな…？」\n家族のために働きたいのに、心も体も疲れ果てる💧",
   ];
 
   const concernRefs = concerns.map(() => useInView({
@@ -422,7 +422,7 @@ function MainComponent() {
           
           <div className="relative">
             <Image
-              src="/image/michill.jpg"
+              src="/image/top.jpeg"
               alt="明るく清潔感のあるサロン内装"
               width={1200}
               height={600}
@@ -483,20 +483,9 @@ function MainComponent() {
             </button>
       </div>
 
-      <div className="mt-8 md:mt-12 px-4 max-w-6xl mx-auto">
-        <Image
-          src="/image/zentai.png"
-          alt="説明的な代替テキスト"
-          width={1200}
-          height={800}
-          className="w-full h-auto rounded-lg shadow-lg"
-          priority
-        />
-      </div>
-
       <section className="py-16 md:py-24 mt-8 md:mt-12">
         <SectionHeader 
-          title="世の中の30代ママ美容師さんが抱える悩み事、当サロンでは一切致しません"
+          title="世の中の50代ママ美容師さんが抱える悩み事、当サロンでは一切致しません"
           
         />
         <div className="max-w-6xl mx-auto px-4">
@@ -528,10 +517,10 @@ function MainComponent() {
               <h3 className="text-base md:text-xl font-bold text-center mb-3 md:mb-6 text-[#D3B58D]">＜Liliyの場合＞</h3>
               <div className="flex flex-col items-center gap-2 md:gap-4">
                 {[
-                  "平均18,000円以上の高単価サロンでゆとりある予約状況✨",
-                  "教育終了後に3名程度でゆったり接客✨",
-                  "ママ美容師の先輩がいますので、みんなで予約をすぐに調整✨",
-                  "外部相談役も。心理的安全性を保ちながら地域に必要とされる存在へ共に✨"
+                  "「自分らしい接客ができる」\n自分の個性を活かした接客で、お客様との信頼関係を築けます✨",
+      "「家族との時間を大切にできる」\n子供の行事や体調不良での早退・休暇も気兼ねなく相談できます。\n自分を大切にできる環境だから、家庭との両立も叶います✨",
+      "「年齢に関係なく、挑戦できる」\n得意な技術を活かし、新しいことにも挑戦できる環境。\n自分のペースで成長でき、それが評価に反映されます✨",
+      "「将来に希望が持てる」\n心身ともに健康で、自分らしく長く働ける。\n次の世代のためにも、より良い環境を一緒に作っていけます✨"
                 ].map((solution, index) => (
                   <React.Fragment key={index}>
                     <div 
@@ -673,24 +662,26 @@ function MainComponent() {
               style={{ transitionDelay: '100ms' }}
             >
               <h3 className="text-2xl mb-4 font-bold">
-                新しい技術・スキルを営業内に学ぶことができます
+              自分らしい接客スタイルで、お客様との絆を深められます
               </h3>
               <div className="flex flex-col md:flex-row gap-4 md:gap-6">
                 <div className="w-full md:w-[400px] flex-shrink-0">
                   <Image
-                    src="/image/zikannai.JPG"
+                    src="/image/sozai.jpeg"
                     alt="スタッフの様子"
                     width={400}
                     height={300}
                     className="w-full h-[400px] md:h-[300px] rounded-lg object-cover"
                   />
                 </div>
-                <p className="text-base md:text-lg leading-relaxed">
-                  これにより、体と心に負担がかからず、家庭とお仕事の両立ができます。
-                  女性にゆとりができると家族の雰囲気もガラッと変わりますね。
-                  10年後、お子さまやパートナーからもリスペクトされる働き方を作りましょう。
-          
-                </p>
+                <div className="space-y-4">
+                  <p className="text-base md:text-lg leading-relaxed">
+                    <span className="bg-[#D3B58D]/10 px-2 py-1 rounded inline-block">マニュアル化された接客は一切ありません。</span>
+                  </p>
+                  <p className="text-base md:text-lg leading-relaxed">
+                    長年の経験を活かし、お客様一人ひとりに合わせた自然な会話と施術を提供できます。これまでの経験を活かしながら、新しい可能性も見つけられる環境です。
+                  </p>
+                </div>
               </div>
             </div>
 
@@ -701,7 +692,7 @@ function MainComponent() {
               style={{ transitionDelay: '200ms' }}
             >
               <h3 className="text-2xl mb-4 font-bold">
-                現場以外のキャリアを叶えることができます
+              得意分野を活かせる多彩なキャリアパス
               </h3>
               <div className="flex flex-col md:flex-row gap-4 md:gap-6">
                 <div className="w-full md:w-[400px] flex-shrink-0">
@@ -713,13 +704,19 @@ function MainComponent() {
                     className="w-full h-[400px] md:h-[300px] rounded-lg object-cover"
                   />
                 </div>
-                <p className="text-base md:text-lg leading-relaxed">
-                  これにより、急な体調のゆらぎが起こった場合はしばらくは在宅に切り替えたり、
-                  現場以外のメーカー部や企画広報部としてのお仕事で地域貢献もできます、
-                  弊社ではコンセプトの異なる4サロンを展開しているため、
-                  年齢や希望に沿った働き方を一緒に作っていきましょう。
-
-                </p>
+                <div className="space-y-4">
+                  <p className="text-base md:text-lg leading-relaxed">
+                    <span className="bg-[#D3B58D]/10 px-2 py-1 rounded inline-block">カラー、ネイル、ヘッドスパなど、得意な技術を存分に活かせます。</span>
+                  </p>
+                  <p className="text-base md:text-lg leading-relaxed">
+                    年齢に関係なく、新しい技術へのチャレンジも応援。実力に応じた評価システムで、着実なキャリアアップを実現できます。
+                  </p>
+                  <ul className="list-disc list-inside text-gray-700 space-y-2">
+                    <li>カラーリストとしての専門性を活かせる</li>
+                    <li>ヘッドスパ技術の向上支援</li>
+                    <li>ネイルなど、複数のスキルを活かせる環境</li>
+                  </ul>
+                </div>
               </div>
             </div>
 
@@ -730,7 +727,7 @@ function MainComponent() {
               style={{ transitionDelay: '300ms' }}
             >
               <h3 className="text-2xl mb-4 font-bold">
-                特化メニューの提供
+              家庭との両立を全面的にサポート
               </h3>
               <div className="flex flex-col md:flex-row gap-4 md:gap-6">
                 <div className="w-full md:w-[400px] flex-shrink-0">
@@ -742,11 +739,19 @@ function MainComponent() {
                     className="w-full h-[400px] md:h-[300px] rounded-lg object-cover"
                   />
                 </div>
-                <p className="text-base md:text-lg leading-relaxed">
-                  「白髪老化ケア」という頭皮や髪を錆びさせずに、
-                  守り続ける施術を自社開発しました。
-                  これにより、お客様が失客せず、末永く施術することが可能になりました。
-                </p>
+                <div className="space-y-4">
+                  <p className="text-base md:text-lg leading-relaxed">
+                    <span className="bg-[#D3B58D]/10 px-2 py-1 rounded inline-block">子育てと仕事の両立を応援する柔軟な勤務体制</span>
+                  </p>
+                  <ul className="list-disc list-inside text-gray-700 space-y-2">
+                    <li>子供の行事や急な体調不良にも対応可能</li>
+                    <li>土日休み相談可能</li>
+                    <li>予約状況に応じて早上がりも可能</li>
+                  </ul>
+                  <p className="text-gray-600 italic">
+                    "子育て中でも安心して働ける環境があり、家族との時間も大切にできています"
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -1039,11 +1044,11 @@ function MainComponent() {
               },
               {
                 question: "お客様の年齢層は？",
-                answer: "20代から50代です。"
+                answer: "20代から50代の女性が多いです。スパと一緒に癒されたい方が特に多く、リラックスできる空間づくりを心がけています。"
               },
               {
                 question: "採用までの流れはどんな感じですか？",
-                answer: "採用は、履歴書と面接です"
+                answer: "採用までの流れは4ステップです。まずはお店の雰囲気を知っていただくための店舗見学、その後履歴書の提出、実際の環境を体験できる体験入店を経て、採用となります。各ステップでご不安な点などございましたら、お気軽にご相談ください。"
               },
               
             ].map((qa, index) => (
@@ -1086,11 +1091,11 @@ function MainComponent() {
               <div className="md:w-1/3 flex flex-col items-center text-center">
                 <div className="w-40 h-40 md:w-64 md:h-64 overflow-hidden rounded-full border-4 border-white shadow-md mb-4">
                   <Image
-                    src="/image/roni.jpg"
+                    src="/image/tanaka.jpeg"
                     alt="オーナーの写真"
                     width={500}
                     height={500}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover object-top"
                     priority
                   />
                 </div>
