@@ -150,7 +150,7 @@ const ImageSlideshow = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const images = [
     {
-      src: "/image/gaikan.jpg",
+      src: "/image/gaikan.jpeg",
       alt: "外観の様子"
     },
     {
@@ -697,7 +697,7 @@ function MainComponent() {
               <div className="flex flex-col md:flex-row gap-4 md:gap-6">
                 <div className="w-full md:w-[400px] flex-shrink-0">
                   <Image
-                    src="/image/miga.jpg"
+                    src="/image/neiru.jpeg"
                     alt="スタッフの様子"
                     width={400}
                     height={300}
@@ -976,7 +976,6 @@ function MainComponent() {
                 <ul className="list-disc list-inside space-y-1 text-gray-600">
                   <li>講習費無料</li>
                   <li>ヴィッグ支給</li>
-                  <li>制服支給（週1着用日があります）</li>
                   <li>練習アプリ無料</li>
                   <li>マネジメント＆コミュニケーション勉強会無料</li>
                   <li>メイクレッスン補助</li>
