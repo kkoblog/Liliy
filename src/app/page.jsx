@@ -10,7 +10,7 @@ const SectionHeader = ({ title, subtitle }) => (
     <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center text-black">
       <span className="relative inline-block pb-4">
         {title}
-        <span className="absolute -bottom-2 left-0 w-full h-1 bg-[#D3B58D]"></span>
+        <span className="absolute -bottom-2 left-0 w-full h-1 bg-[#D4AF37]"></span>
       </span>
     </h2>
     {subtitle && (
@@ -26,7 +26,7 @@ const SectionHeader2 = ({ title, subtitle }) => (
   <div className="relative mb-12 md:mb-16 px-4">
     <h2 className="relative inline-block text-2xl md:text-3xl lg:text-4xl font-bold text-center w-full">
       <span className="relative z-10">{title}</span>
-      <span className="absolute left-0 bottom-1 w-full h-3 bg-rose-200/30 -rotate-1 z-0"></span>
+      <span className="absolute left-0 bottom-1 w-full h-3 bg-[#D4AF37]/30 -rotate-1 z-0"></span>
     </h2>
     {subtitle && (
       <p className="mt-6 text-sm md:text-base text-gray-600 text-center">
@@ -39,14 +39,14 @@ const SectionHeader2 = ({ title, subtitle }) => (
 // カラーパレットの定義
 const colors = {
   primary: {
-    bg: 'bg-[#f8f6f4]',      // ベースの明るいベージュ
+    bg: 'bg-white',          // 背景を白に変更
     text: 'text-[#4a4a4a]',  // ダークグレー
-    accent: 'bg-[#d4c3b7]',  // ライトブラウン
+    accent: 'bg-[#D4AF37]',  // ゴールド
   },
   secondary: {
-    light: 'bg-[#fdfbf9]',   // オフホワイト
-    border: 'border-[#e8e2dc]', // ライトベージュ
-    hover: 'hover:bg-[#f3efe9]', // ホバー時のベージュ
+    light: 'bg-white',       // 背景を白に変更
+    border: 'border-[#D4AF37]', // ゴールド
+    hover: 'hover:bg-[#D4AF37]/10', // ホバー時のゴールド（薄め）
   }
 };
 
@@ -71,8 +71,8 @@ const StaffCard = ({ image, name, position, message }) => {
     <div className="bg-[#f5f5f5] p-4 md:p-8 rounded-xl shadow-sm">
       <div className="bg-white/80 p-6 rounded-xl shadow-sm h-full flex flex-col">
         <div className="flex items-center space-x-2 mb-4">
-          <i className="fas fa-quote-left text-[#D3B58D] text-xl"></i>
-          <span className="text-[#D3B58D] font-medium"></span>
+          <i className="fas fa-quote-left text-[#D4AF37] text-xl"></i>
+          <span className="text-[#D4AF37] font-medium"></span>
         </div>
         
         <div className="flex items-center mb-6">
@@ -99,8 +99,8 @@ const StaffCard = ({ image, name, position, message }) => {
           {name === "kaoru" ? (
             <>
               <p className="text-gray-700">
-                でも<span className="font-bold text-[#D3B58D]">Liliyでは</span>、
-                <span className="bg-[#D3B58D]/10 px-2 py-1 rounded inline-block mt-1">
+                でも<span className="font-bold text-[#D4AF37]">Liliyでは</span>、
+                <span className="bg-[#D4AF37]/10 px-2 py-1 rounded inline-block mt-1">
                   長年の経験を活かし、半年でカラーリストからメンズカットまでデビューできました。
                   無理なく入客できる環境が心強いです。
                 </span>
@@ -108,7 +108,7 @@ const StaffCard = ({ image, name, position, message }) => {
               
               <p className="text-gray-700">
                 50歳を超えて身体的な不安もある中、
-                <span className="border-b-2 border-[#D3B58D]">
+                <span className="border-b-2 border-[#D4AF37]">
                   休みの設定も柔軟で、子供との時間もしっかり確保できるため、仕事も子育ても充実しています！
                 </span>
               </p>
@@ -116,8 +116,8 @@ const StaffCard = ({ image, name, position, message }) => {
           ) : (
             <>
               <p className="text-gray-700">
-                でも<span className="font-bold text-[#D3B58D]">Liliyに入社して</span>、
-                <span className="bg-[#D3B58D]/10 px-2 py-1 rounded inline-block mt-1">
+                でも<span className="font-bold text-[#D4AF37]">Liliyに入社して</span>、
+                <span className="bg-[#D4AF37]/10 px-2 py-1 rounded inline-block mt-1">
                   オーナーをはじめ、チーフなどスタッフ全員の協力のもと、無理なく一歩ずつスキルアップができています。
                   前職では外部講習の費用負担もあり、パートとの両立が厳しく夫からも心配されていましたが...
                 </span>
@@ -125,14 +125,14 @@ const StaffCard = ({ image, name, position, message }) => {
               
               <p className="text-gray-700">
                 今では、
-                <span className="border-b-2 border-[#D3B58D]">
+                <span className="border-b-2 border-[#D4AF37]">
                   予約状況に応じて早上がりも可能で、家事にもしっかり時間を使えるようになりました。
                   仕事と家庭のバランスが取れ、心に余裕が生まれています。
                 </span>
               </p>
               
               <p className="text-gray-700">
-                <span className="bg-[#D3B58D]/10 px-2 py-1 rounded inline-block mt-1">
+                <span className="bg-[#D4AF37]/10 px-2 py-1 rounded inline-block mt-1">
                   技術面でも着実に成長を実感でき、毎日が楽しく充実しています。
                 </span>
               </p>
@@ -318,7 +318,6 @@ function MainComponent() {
         main: "あなたらしい接客ができる方",
         sub: "「こうしなければならない」という固定観念に縛られず働きたい方"
       },
-      
     ];
 
     const [ref, inView] = useInView({
@@ -328,13 +327,11 @@ function MainComponent() {
     });
 
     return (
-      <section className="py-16 md:py-24 bg-gradient-to-r from-[#D3B58D]/10 to-[#D3B58D]/5">
+      <section className="py-16 md:py-24 bg-white">
         <SectionHeader 
           title="求める人材"
           subtitle="私たちと一緒に働きませんか？"
         />
-
-    
         
         <div className="max-w-6xl mx-auto px-4">
           <div 
@@ -350,8 +347,8 @@ function MainComponent() {
               >
                 <div className="flex items-start space-x-4">
                   <div className="flex-shrink-0 mt-1">
-                    <div className="w-6 h-6 bg-[#D3B58D]/20 rounded-full flex items-center justify-center">
-                      <span className="text-black text-sm font-medium">
+                    <div className="w-6 h-6 bg-[#D4AF37]/20 rounded-full flex items-center justify-center">
+                      <span className="text-[#D4AF37] text-sm font-medium">
                         {index + 1}
                       </span>
                     </div>
@@ -391,8 +388,6 @@ function MainComponent() {
             ))}
           </div>
 
-          
-
           <div className="flex flex-col sm:flex-row gap-4 items-center justify-center mt-12">
             <Link 
               href="/contact" 
@@ -400,7 +395,6 @@ function MainComponent() {
             >
               応募する
             </Link>
-            
           </div>
         </div>
       </section>
@@ -478,12 +472,15 @@ function MainComponent() {
             >
               応募する
             </Link>
-            <button className="bg-[#06c755] text-white px-6 py-3 rounded-full hover:bg-[#059144] transition duration-300 text-sm sm:text-base sm:px-8 w-fit mx-auto sm:mx-0">
+            <button 
+              onClick={() => scrollToSection('owner')} 
+              className="bg-[#06c755] text-white px-6 py-3 rounded-full hover:bg-[#059144] transition duration-300 text-sm sm:text-base sm:px-8 w-fit mx-auto sm:mx-0"
+            >
               代表からのメッセージを見る
             </button>
       </div>
 
-      <section className="py-16 md:py-24 mt-8 md:mt-12">
+      <section className="py-16 md:py-24 mt-8 md:mt-12 bg-white">
         <SectionHeader 
           title="世の中の50代ママ美容師さんが抱える悩み事、当サロンでは一切致しません"
           
@@ -492,18 +489,18 @@ function MainComponent() {
           <div className="grid grid-cols-2 gap-2 md:gap-8">
             {/* 左側: 一般的な美容室の悩み */}
             <div className="p-2 md:p-6 rounded-lg">
-              <h3 className="text-base md:text-xl font-bold text-center mb-3 md:mb-6 text-red-600">＜他店＞</h3>
+              <h3 className="text-base md:text-xl font-bold text-center mb-3 md:mb-6 text-gray-600">＜他店＞</h3>
               <div className="flex flex-col items-center gap-2 md:gap-4">
                 {concerns.map((concern, index) => (
                   <React.Fragment key={index}>
                     <div 
-                      className={`border-2 border-red-200 rounded-lg p-2 md:p-4 w-full text-center bg-white shadow-sm transition-all duration-500 text-xs md:text-base leading-relaxed whitespace-pre-line`}
+                      className={`border-2 border-gray-200 rounded-lg p-2 md:p-4 w-full text-center bg-white shadow-sm transition-all duration-500 text-xs md:text-base leading-relaxed whitespace-pre-line`}
                     >
                       {concern}
                     </div>
                     
                     {index < concerns.length - 1 && (
-                      <div className="text-red-400 text-base md:text-2xl">
+                      <div className="text-gray-400 text-base md:text-2xl">
                         ↓
                       </div>
                     )}
@@ -514,7 +511,7 @@ function MainComponent() {
 
             {/* 右側: michillでの解決策 */}
             <div className="p-2 md:p-6 rounded-lg">
-              <h3 className="text-base md:text-xl font-bold text-center mb-3 md:mb-6 text-[#D3B58D]">＜Liliyの場合＞</h3>
+              <h3 className="text-base md:text-xl font-bold text-center mb-3 md:mb-6 text-[#D4AF37]">＜Liliyの場合＞</h3>
               <div className="flex flex-col items-center gap-2 md:gap-4">
                 {[
                   "「自分らしい接客ができる」\n自分の個性を活かした接客で、お客様との信頼関係を築けます✨",
@@ -524,13 +521,13 @@ function MainComponent() {
                 ].map((solution, index) => (
                   <React.Fragment key={index}>
                     <div 
-                      className={`border-2 border-[#D3B58D] rounded-lg p-2 md:p-4 w-full text-center bg-white shadow-sm transition-all duration-500 text-xs md:text-base leading-relaxed`}
+                      className={`border-2 border-[#D4AF37] rounded-lg p-2 md:p-4 w-full text-center bg-white shadow-sm transition-all duration-500 text-xs md:text-base leading-relaxed`}
                     >
                       {solution}
                     </div>
                     
                     {index < 3 && (
-                      <div className="text-[#D3B58D] text-base md:text-2xl">
+                      <div className="text-[#D4AF37] text-base md:text-2xl">
                         ↓
                       </div>
                     )}
@@ -542,7 +539,7 @@ function MainComponent() {
         </div>
       </section>
 
-      <div className="mt-4 bg-gradient-to-r from-[#D3B58D]/10 to-[#D3B58D]/5 rounded-3xl p-6 md:p-8 relative overflow-hidden">
+      <div className="mt-4 bg-white rounded-3xl p-6 md:p-8 relative overflow-hidden">
         <div className="absolute inset-0 bg-white/50"></div>
         
         <div className="relative z-10">
@@ -568,19 +565,19 @@ function MainComponent() {
             className="text-base md:text-xl leading-relaxed text-center max-w-3xl mx-auto space-y-6"
           >
             <div 
-              className={`bg-white rounded-lg p-6 shadow-md border border-[#D3B58D]/20 hover:shadow-lg transition-all duration-700 ${
+              className={`bg-white rounded-lg p-6 shadow-md border border-[#D4AF37]/20 hover:shadow-lg transition-all duration-700 ${
                 featuresInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
               }`}
               style={{ transitionDelay: '100ms' }}
             >
-              <span className="text-[#D3B58D] font-bold text-lg">①</span>
+              <span className="text-[#D4AF37] font-bold text-lg">①</span>
               実力が正当に評価される高単価サロン
               <br />
               <br />
               <span className="text-gray-700 text-sm md:text-base">
                 平均単価11,000円〜15,000円で
                 <br />
-                <span className="bg-[#D3B58D]/10 px-2 py-1 rounded inline-block mt-1">
+                <span className="bg-[#D4AF37]/10 px-2 py-1 rounded inline-block mt-1">
                   経験を活かした技術に見合った収入
                 </span>
                 <br />
@@ -593,19 +590,19 @@ function MainComponent() {
             </div>
 
             <div 
-              className={`bg-white rounded-lg p-6 shadow-md border border-[#D3B58D]/20 hover:shadow-lg transition-all duration-700 ${
+              className={`bg-white rounded-lg p-6 shadow-md border border-[#D4AF37]/20 hover:shadow-lg transition-all duration-700 ${
                 featuresInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
               }`}
               style={{ transitionDelay: '300ms' }}
             >
-              <span className="text-[#D3B58D] font-bold text-lg">②</span>
+              <span className="text-[#D4AF37] font-bold text-lg">②</span>
               あなたのペースで働ける環境
               <br />
               <br />
               <span className="text-gray-700 text-sm md:text-base">
                 子育ての予定を優先できます
                 <br />
-                <span className="bg-[#D3B58D]/10 px-2 py-1 rounded inline-block mt-1">
+                <span className="bg-[#D4AF37]/10 px-2 py-1 rounded inline-block mt-1">
                   急な早退や休みも気兼ねなく相談OK
                 </span>
                 <br />
@@ -618,19 +615,19 @@ function MainComponent() {
             </div>
 
             <div 
-              className={`bg-white rounded-lg p-6 shadow-md border border-[#D3B58D]/20 hover:shadow-lg transition-all duration-700 ${
+              className={`bg-white rounded-lg p-6 shadow-md border border-[#D4AF37]/20 hover:shadow-lg transition-all duration-700 ${
                 featuresInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
               }`}
               style={{ transitionDelay: '500ms' }}
             >
-              <span className="text-[#D3B58D] font-bold text-lg">③</span>
+              <span className="text-[#D4AF37] font-bold text-lg">③</span>
               あなたの"好き"を活かせる職場
               <br />
               <br />
               <span className="text-gray-700 text-sm md:text-base">
                 ヘアもネイルも、得意分野を活かせます
                 <br />
-                <span className="bg-[#D3B58D]/10 px-2 py-1 rounded inline-block mt-1">
+                <span className="bg-[#D4AF37]/10 px-2 py-1 rounded inline-block mt-1">
                   マニュアル化された接客は一切ありません
                 </span>
                 <br />
@@ -645,7 +642,7 @@ function MainComponent() {
         </div>
       </div>
 
-      <section className="py-16 md:py-24 bg-gradient-to-r from-[#D3B58D]/10 to-[#D3B58D]/5">
+      <section className="py-16 md:py-24 bg-white">
         <SectionHeader 
           title="Liliy HAIR & SPAで働くことで得られる事"
           subtitle="あなたらしい働き方"
@@ -676,7 +673,7 @@ function MainComponent() {
                 </div>
                 <div className="space-y-4">
                   <p className="text-base md:text-lg leading-relaxed">
-                    <span className="bg-[#D3B58D]/10 px-2 py-1 rounded inline-block">マニュアル化された接客は一切ありません。</span>
+                    <span className="bg-[#D4AF37]/10 px-2 py-1 rounded inline-block">マニュアル化された接客は一切ありません。</span>
                   </p>
                   <p className="text-base md:text-lg leading-relaxed">
                     長年の経験を活かし、お客様一人ひとりに合わせた自然な会話と施術を提供できます。これまでの経験を活かしながら、新しい可能性も見つけられる環境です。
@@ -706,7 +703,7 @@ function MainComponent() {
                 </div>
                 <div className="space-y-4">
                   <p className="text-base md:text-lg leading-relaxed">
-                    <span className="bg-[#D3B58D]/10 px-2 py-1 rounded inline-block">カラー、ネイル、ヘッドスパなど、得意な技術を存分に活かせます。</span>
+                    <span className="bg-[#D4AF37]/10 px-2 py-1 rounded inline-block">カラー、ネイル、ヘッドスパなど、得意な技術を存分に活かせます。</span>
                   </p>
                   <p className="text-base md:text-lg leading-relaxed">
                     年齢に関係なく、新しい技術へのチャレンジも応援。実力に応じた評価システムで、着実なキャリアアップを実現できます。
@@ -732,7 +729,7 @@ function MainComponent() {
               <div className="flex flex-col md:flex-row gap-4 md:gap-6">
                 <div className="w-full md:w-[400px] flex-shrink-0">
                   <Image
-                    src="/image/sezyutu.jpg"
+                    src="/image/sejyutu.jpeg"
                     alt="スタッフの様子"
                     width={400}
                     height={300}
@@ -741,7 +738,7 @@ function MainComponent() {
                 </div>
                 <div className="space-y-4">
                   <p className="text-base md:text-lg leading-relaxed">
-                    <span className="bg-[#D3B58D]/10 px-2 py-1 rounded inline-block">子育てと仕事の両立を応援する柔軟な勤務体制</span>
+                    <span className="bg-[#D4AF37]/10 px-2 py-1 rounded inline-block">子育てと仕事の両立を応援する柔軟な勤務体制</span>
                   </p>
                   <ul className="list-disc list-inside text-gray-700 space-y-2">
                     <li>子供の行事や急な体調不良にも対応可能</li>
@@ -765,7 +762,7 @@ function MainComponent() {
               <h3 className="text-2xl mb-6 font-bold text-center">
                 <span className="relative inline-block">
                   とある現場の1日のスケジュール
-                  <span className="absolute -bottom-2 left-0 w-full h-1 bg-[#D3B58D]/30"></span>
+                  <span className="absolute -bottom-2 left-0 w-full h-1 bg-[#D4AF37]/30"></span>
                 </span>
               </h3>
 
@@ -773,7 +770,7 @@ function MainComponent() {
   <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
     {/* 早番シフト */}
     <div className="bg-white p-6 rounded-lg shadow-sm">
-      <h4 className="text-lg font-bold text-[#D3B58D] mb-4 text-center border-b-2 border-[#D3B58D]/20 pb-2">
+      <h4 className="text-lg font-bold text-[#D4AF37] mb-4 text-center border-b-2 border-[#D4AF37]/20 pb-2">
         早番シフト
       </h4>
       <div className="space-y-3">
@@ -786,10 +783,10 @@ function MainComponent() {
         ].map((schedule, index) => (
           <div 
             key={index}
-            className="flex items-center gap-4 p-3 hover:bg-[#D3B58D]/5 rounded-lg transition-colors duration-300"
+            className="flex items-center gap-4 p-3 hover:bg-[#D4AF37]/5 rounded-lg transition-colors duration-300"
           >
             <div className="w-20 flex-shrink-0">
-              <span className="font-bold text-[#D3B58D]">{schedule.time}</span>
+              <span className="font-bold text-[#D4AF37]">{schedule.time}</span>
             </div>
             <div className="flex-grow">
               <span className="text-gray-700">{schedule.activity}</span>
@@ -801,7 +798,7 @@ function MainComponent() {
 
     {/* 遅番シフト */}
     <div className="bg-white p-6 rounded-lg shadow-sm">
-      <h4 className="text-lg font-bold text-[#D3B58D] mb-4 text-center border-b-2 border-[#D3B58D]/20 pb-2">
+      <h4 className="text-lg font-bold text-[#D4AF37] mb-4 text-center border-b-2 border-[#D4AF37]/20 pb-2">
         遅番シフト
       </h4>
       <div className="space-y-3">
@@ -814,10 +811,10 @@ function MainComponent() {
         ].map((schedule, index) => (
           <div 
             key={index}
-            className="flex items-center gap-4 p-3 hover:bg-[#D3B58D]/5 rounded-lg transition-colors duration-300"
+            className="flex items-center gap-4 p-3 hover:bg-[#D4AF37]/5 rounded-lg transition-colors duration-300"
           >
             <div className="w-20 flex-shrink-0">
-              <span className="font-bold text-[#D3B58D]">{schedule.time}</span>
+              <span className="font-bold text-[#D4AF37]">{schedule.time}</span>
             </div>
             <div className="flex-grow">
               <span className="text-gray-700">{schedule.activity}</span>
@@ -828,7 +825,7 @@ function MainComponent() {
     </div>
   </div>
 
-  <div className="mt-8 p-6 bg-[#D3B58D]/10 rounded-lg">
+  <div className="mt-8 p-6 bg-[#D4AF37]/10 rounded-lg">
     <p className="text-sm text-gray-600 text-center">
       ※「もっと働きたい！」という方のために、夜は23時までの勤務も可能
     </p>
@@ -849,7 +846,7 @@ function MainComponent() {
         </div>
       </section>
 
-      <section className="py-16 md:py-24">
+      <section className="py-16 md:py-24 bg-white">
       <SectionHeader 
           title="スタッフ紹介"
           subtitle="働く仲間"
@@ -876,7 +873,7 @@ function MainComponent() {
 
     
 
-<section className="py-16 md:py-24 bg-gradient-to-r from-[#D3B58D]/10 to-[#D3B58D]/5">
+<section className="py-16 md:py-24 bg-white">
   <SectionHeader 
     title="募集要項"
     subtitle="採用情報"
@@ -899,7 +896,7 @@ function MainComponent() {
               <div>
                 <p className="font-medium">スタイリスト</p>
                 <div className="ml-4 space-y-2">
-                  <p className="font-medium text-[#D3B58D]">【パート・アルバイト】</p>
+                  <p className="font-medium text-[#D4AF37]">【パート・アルバイト】</p>
                   <ul className="list-disc list-inside text-gray-600 space-y-1">
                     <li>時給1,400円〜2,200円</li>
                   </ul>
@@ -909,7 +906,7 @@ function MainComponent() {
                       <p className="text-gray-600">10時～17時</p>
                       <p className="text-lg font-medium text-gray-800">時給1,400円～2,200円</p>
                     </div>
-                    <div className="border border-[#D3B58D] rounded-lg p-4 bg-[#D3B58D]/5 relative">
+                    <div className="border border-[#D4AF37] rounded-lg p-4 bg-[#D4AF37]/5 relative">
                       <span className="absolute -top-3 -right-3 bg-[#e24a4a] text-white px-3 py-1 rounded-full text-sm transform rotate-12">
                         募集中！
                       </span>
@@ -989,12 +986,12 @@ function MainComponent() {
           title: "その他",
           content: (
             <div className="flex items-center space-x-4">
-              <span className="inline-flex items-center px-3 py-1 rounded-full bg-[#D3B58D]/10 text-gray-700">
-                <i className="fas fa-check mr-2 text-[#D3B58D]"></i>
+              <span className="inline-flex items-center px-3 py-1 rounded-full bg-[#D4AF37]/10 text-gray-700">
+                <i className="fas fa-check mr-2 text-[#D4AF37]"></i>
                 有給100%消化
               </span>
-              <span className="inline-flex items-center px-3 py-1 rounded-full bg-[#D3B58D]/10 text-gray-700">
-                <i className="fas fa-check mr-2 text-[#D3B58D]"></i>
+              <span className="inline-flex items-center px-3 py-1 rounded-full bg-[#D4AF37]/10 text-gray-700">
+                <i className="fas fa-check mr-2 text-[#D4AF37]"></i>
                 残業なし
               </span>
             </div>
@@ -1007,7 +1004,7 @@ function MainComponent() {
             index % 2 === 0 ? 'bg-white' : 'bg-gray-50'
           }`}
         >
-          <div className="w-full md:w-1/4 p-4 md:p-6 bg-[#D3B58D]/5">
+          <div className="w-full md:w-1/4 p-4 md:p-6 bg-[#D4AF37]/5">
             <h4 className="font-bold text-gray-800">{item.title}</h4>
           </div>
           <div className="w-full md:w-3/4 p-4 md:p-6">
@@ -1029,7 +1026,7 @@ function MainComponent() {
 
       <RequirementSection />
 
-      <section className="py-16 md:py-24" id="qa" ref={qaRef}>
+      <section className="py-16 md:py-24 bg-white" id="qa" ref={qaRef}>
         <SectionHeader 
           title="よくあるご質問"
           subtitle="Q&A"
@@ -1060,15 +1057,15 @@ function MainComponent() {
               >
                 <summary className="text-lg md:text-xl font-medium cursor-pointer list-none flex justify-between items-center text-gray-800">
                   <span className="flex items-center gap-3">
-                    <span className="text-[#D3B58D]">Q.</span>
+                    <span className="text-[#D4AF37]">Q.</span>
                     {qa.question}
                   </span>
-                  <span className="transform group-open:rotate-180 transition-transform duration-300 text-[#D3B58D]">
+                  <span className="transform group-open:rotate-180 transition-transform duration-300 text-[#D4AF37]">
                     ▼
                   </span>
                 </summary>
                 <div className="mt-4 pl-6 text-gray-600 leading-relaxed">
-                  <span className="text-[#D3B58D] font-medium">A.</span>
+                  <span className="text-[#D4AF37] font-medium">A.</span>
                   <span className="ml-2">{qa.answer}</span>
                 </div>
               </details>
@@ -1079,7 +1076,7 @@ function MainComponent() {
         </div>
       </section>
 
-      <section className="py-12 md:py-24 bg-gradient-to-r from-[#D3B58D]/10 to-[#D3B58D]/5">
+      <section className="py-12 md:py-24 bg-white" id="owner" ref={ownerRef}>
         <SectionHeader 
           title="オーナー挨拶"
           subtitle="Message from Owner"
