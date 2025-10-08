@@ -150,12 +150,20 @@ const ImageSlideshow = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const images = [
     {
-      src: "/image/gaikan.jpeg",
-      alt: "外観の様子"
+      src: "/image/new1.jpeg",
+      alt: "サロン外観"
     },
     {
-      src: "/image/tenai2.jpeg",
+      src: "/image/new2.jpeg",
       alt: "店内の様子"
+    },
+    {
+      src: "/image/new3.jpeg",
+      alt: "施術スペース"
+    },
+    {
+      src: "/image/new4.jpeg",
+      alt: "リラックススペース"
     }
   ];
 
@@ -167,7 +175,7 @@ const ImageSlideshow = () => {
     }, 3000);
 
     return () => clearInterval(timer);
-  }, []);
+  }, [images.length]);
 
   return (
     <div className="relative w-full aspect-[1/1] sm:aspect-[16/10] md:aspect-[16/9] lg:aspect-[1/1] overflow-hidden rounded-lg shadow-lg">
@@ -200,7 +208,7 @@ const ImageSlideshow = () => {
         {images.map((_, index) => (
           <button
             key={index}
-            className={`w-2 h-2 rounded-full transition-all duration-300 ${
+            className={`w-3 h-3 rounded-full transition-all duration-300 ${
               currentImageIndex === index ? 'bg-white' : 'bg-white/50'
             }`}
             onClick={() => setCurrentImageIndex(index)}
